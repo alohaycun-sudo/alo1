@@ -74,6 +74,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .balance {
@@ -85,660 +86,30 @@
             align-items: center;
             gap: 5px;
             font-size: 14px;
-        }
-
-        /* Auth forms */
-        .auth-form {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 400px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: none;
-        }
-
-        .auth-form.active {
-            display: block;
-        }
-
-        .auth-form h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            font-size: 16px;
-        }
-
-        .form-group textarea {
-            min-height: 80px;
-            resize: vertical;
-        }
-
-        .btn {
-            width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            border: none;
-            background: linear-gradient(to right, var(--primary-color), #FF8E53);
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(to right, var(--secondary-color), #0066CC);
-        }
-
-        .btn-success {
-            background: linear-gradient(to right, var(--success-color), #0ABF7C);
-        }
-
-        .btn-market {
-            background: linear-gradient(to right, var(--market-color), #7B2CBF);
-        }
-
-        .btn-sm {
-            padding: 8px 15px;
-            font-size: 14px;
-            width: auto;
-        }
-
-        .switch-auth {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        .switch-auth a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Game area */
-        .game-container {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .depth-info {
-            background: linear-gradient(to right, #0F3460, #1A1A2E);
-            padding: 10px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .depth-meter {
-            height: 20px;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            margin-top: 10px;
-            overflow: hidden;
-        }
-
-        .depth-fill {
-            height: 100%;
-            background: linear-gradient(to right, #4ECDC4, #44A08D);
-            border-radius: 10px;
-            width: 0%;
-            transition: width 0.5s ease;
-        }
-
-        .game-area {
-            position: relative;
-            height: 300px;
-            background: linear-gradient(to bottom, #0F3460, #1A1A2E);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 15px;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .ground {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 80%;
-            background: linear-gradient(to top, #3A2C28, #553D36);
-        }
-
-        .miner {
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 80px;
-            transition: bottom 0.5s ease;
-            z-index: 10;
-        }
-
-        .miner-body {
-            width: 40px;
-            height: 50px;
-            background: #555;
-            border-radius: 5px;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .miner-head {
-            width: 30px;
-            height: 30px;
-            background: #FFD166;
-            border-radius: 50%;
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .miner-light {
-            width: 15px;
-            height: 15px;
-            background: #FFD166;
-            border-radius: 50%;
-            position: absolute;
-            top: -10px;
-            left: 60%;
-            box-shadow: 0 0 10px 5px rgba(255, 209, 102, 0.5);
-        }
-
-        .item {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            z-index: 5;
-            opacity: 0;
-            transform: scale(0);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .item.show {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .worm { background: radial-gradient(circle, #8B4513, #654321); color: #FFF; }
-        .gold { background: radial-gradient(circle, #FFD700, #FFA500); color: #FFF; }
-        .silver { background: radial-gradient(circle, #C0C0C0, #A9A9A9); color: #333; }
-        .diamond { background: radial-gradient(circle, #4EE2EC, #2AB7CA); color: #FFF; }
-        .corpse { background: radial-gradient(circle, #708090, #2F4F4F); color: #FFF; }
-        .mouse { background: radial-gradient(circle, #A0522D, #8B4513); color: #FFF; }
-        .grass { background: radial-gradient(circle, #7CFC00, #32CD32); color: #FFF; }
-
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .control-btn {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: none;
-            background: linear-gradient(145deg, var(--primary-color), #FF8E53);
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .control-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.5);
-        }
-
-        .control-btn:active {
-            transform: scale(0.95);
-        }
-
-        /* Inventory */
-        .inventory-container {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-        }
-
-        .inventory-items {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .inventory-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .inventory-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-        }
-
-        .item-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            margin-bottom: 5px;
-        }
-
-        .item-count {
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .item-price {
-            font-size: 12px;
-            color: var(--accent-color);
-        }
-
-        .item-actions {
-            display: flex;
-            gap: 5px;
-            width: 100%;
-        }
-
-        .action-btn {
-            flex: 1;
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
-            font-size: 12px;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3px;
-        }
-
-        .sell-btn {
-            background: var(--success-color);
-            color: white;
-        }
-
-        .list-btn {
-            background: var(--market-color);
-            color: white;
-        }
-
-        /* Market */
-        .market-container {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .market-tabs {
-            display: flex;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 5px;
-            margin-bottom: 15px;
-        }
-
-        .market-tab {
-            flex: 1;
-            text-align: center;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .market-tab.active {
-            background: var(--market-color);
-            font-weight: bold;
-        }
-
-        .market-content {
-            display: none;
-        }
-
-        .market-content.active {
-            display: block;
-        }
-
-        .market-filters {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .filter-select {
-            flex: 1;
-            min-width: 150px;
-            padding: 10px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-
-        .market-listings {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .listing-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-
-        .listing-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .listing-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            flex: 1;
-        }
-
-        .listing-details {
-            flex: 1;
-        }
-
-        .listing-seller {
-            font-size: 12px;
-            color: #AAA;
-            margin-top: 5px;
-        }
-
-        .listing-price {
-            font-weight: bold;
-            color: var(--accent-color);
-            font-size: 18px;
-        }
-
-        .listing-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .no-listings {
-            text-align: center;
-            padding: 30px;
-            color: #AAA;
-            font-style: italic;
-        }
-
-        /* Create Listing Form */
-        .create-listing-form {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-            margin-bottom: 0;
-        }
-
-        /* Leaderboard */
-        .leaderboard-container {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .leaderboard {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .leaderboard-item {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .leaderboard-item.top-1 {
-            background: linear-gradient(to right, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
-            border-left: 5px solid #FFD700;
-        }
-
-        .leaderboard-item.top-2 {
-            background: linear-gradient(to right, rgba(192, 192, 192, 0.3), rgba(192, 192, 192, 0.1));
-            border-left: 5px solid #C0C0C0;
-        }
-
-        .leaderboard-item.top-3 {
-            background: linear-gradient(to right, rgba(205, 127, 50, 0.3), rgba(205, 127, 50, 0.1));
-            border-left: 5px solid #CD7F32;
-        }
-
-        .rank {
-            font-weight: bold;
-            font-size: 20px;
-            width: 30px;
-            text-align: center;
-        }
-
-        .user-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
-
-        .user-details {
-            flex-grow: 1;
-        }
-
-        .user-name {
-            font-weight: bold;
-        }
-
-        .user-stats {
-            font-size: 12px;
-            color: #AAA;
-        }
-
-        /* Chat */
-        .chat-container {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            padding: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .chat-messages {
-            height: 200px;
-            overflow-y: auto;
-            margin-bottom: 10px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-        }
-
-        .chat-message {
-            margin-bottom: 10px;
-            padding: 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            font-size: 14px;
-        }
-
-        .chat-message .sender {
-            font-weight: bold;
-            color: var(--accent-color);
-        }
-
-        .chat-message .time {
-            font-size: 10px;
-            color: #AAA;
-            float: right;
-        }
-
-        .chat-input {
-            display: flex;
-            gap: 10px;
-        }
-
-        .chat-input input {
-            flex-grow: 1;
-            padding: 10px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-        }
-
-        /* Notification */
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--success-color);
-            color: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            transform: translateX(150%);
-            transition: transform 0.5s ease;
-            max-width: 300px;
-        }
-
-        .notification.show {
-            transform: translateX(0);
-        }
-
-        .notification.error {
-            background: var(--danger-color);
-        }
-
-        .notification.warning {
-            background: var(--accent-color);
-            color: #333;
+            white-space: nowrap;
         }
 
         /* Tabs */
         .tabs {
             display: flex;
-            justify-content: space-around;
             background: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             padding: 5px;
             margin-bottom: 15px;
             overflow-x: auto;
+            white-space: nowrap;
         }
 
         .tab {
             flex: 1;
-            min-width: 80px;
+            min-width: 100px;
             text-align: center;
-            padding: 10px;
+            padding: 12px 5px;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.3s ease;
-            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
         }
 
         .tab.active {
@@ -754,6 +125,308 @@
             display: block;
         }
 
+        /* Market Container */
+        .market-container {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .section-title h3 {
+            font-size: 18px;
+        }
+
+        /* Market Tabs */
+        .market-tabs {
+            display: flex;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 5px;
+            margin-bottom: 15px;
+            overflow-x: auto;
+        }
+
+        .market-tab {
+            flex: 1;
+            min-width: 100px;
+            text-align: center;
+            padding: 12px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .market-tab.active {
+            background: var(--market-color);
+            font-weight: bold;
+        }
+
+        .market-content {
+            display: none;
+        }
+
+        .market-content.active {
+            display: block;
+        }
+
+        /* Create Listing Form - FIXED */
+        .create-listing-form {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--accent-color);
+        }
+
+        .form-group select,
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--market-color);
+            box-shadow: 0 0 0 2px rgba(157, 78, 221, 0.3);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 14px 20px;
+            border-radius: 10px;
+            border: none;
+            background: linear-gradient(to right, var(--primary-color), #FF8E53);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-market {
+            background: linear-gradient(to right, var(--market-color), #7B2CBF);
+        }
+
+        .btn-market:hover {
+            box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(to right, var(--success-color), #0ABF7C);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, var(--secondary-color), #0066CC);
+        }
+
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 14px;
+            width: auto;
+        }
+
+        /* Market Listings */
+        .market-listings {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .market-filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            flex: 1;
+            min-width: 150px;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Listing Item */
+        .listing-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .listing-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .listing-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .item-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .listing-details {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .listing-details div {
+            margin-bottom: 5px;
+        }
+
+        .listing-price {
+            font-weight: bold;
+            color: var(--accent-color);
+            font-size: 18px;
+            white-space: nowrap;
+        }
+
+        .listing-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Empty State */
+        .no-listings {
+            text-align: center;
+            padding: 40px 20px;
+            color: #AAA;
+            font-style: italic;
+        }
+
+        .no-listings i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Stats */
+        .market-stats {
+            font-size: 14px;
+            color: #AAA;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--success-color);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 0.5s ease;
+            max-width: 300px;
+            font-size: 14px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.error {
+            background: var(--danger-color);
+        }
+
+        .notification.warning {
+            background: var(--accent-color);
+            color: #333;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -762,6 +435,7 @@
             font-size: 12px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             margin-top: 20px;
+            line-height: 1.5;
         }
 
         .footer a {
@@ -769,71 +443,96 @@
             text-decoration: none;
         }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            background: rgba(0, 0, 0, 0.9);
-            border-radius: 15px;
-            padding: 20px;
-            width: 90%;
-            max-width: 500px;
-            max-height: 90vh;
-            overflow-y: auto;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
         /* Responsive */
-        @media (min-width: 768px) {
-            .container {
-                max-width: 750px;
-                padding: 20px;
+        @media (max-width: 768px) {
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
             }
             
-            .inventory-items {
-                grid-template-columns: repeat(6, 1fr);
+            .listing-item {
+                flex-direction: column;
+                align-items: flex-start;
             }
             
-            .tabs {
-                justify-content: flex-start;
+            .listing-actions {
+                width: 100%;
+                justify-content: space-between;
             }
             
             .tab {
-                min-width: 120px;
+                min-width: 80px;
+                padding: 10px 5px;
+                font-size: 12px;
+            }
+            
+            .market-tab {
+                min-width: 80px;
+                padding: 10px 5px;
+                font-size: 12px;
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .user-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .balance {
+                width: 100%;
+                justify-content: center;
             }
         }
+
+        @media (max-width: 480px) {
+            .market-filters {
+                flex-direction: column;
+            }
+            
+            .filter-select {
+                width: 100%;
+            }
+            
+            .tabs {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .market-tabs {
+                flex-wrap: nowrap;
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
+        }
+
+        /* Scrollbar Styling */
+        .market-listings::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .market-listings::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 3px;
+        }
+
+        .market-listings::-webkit-scrollbar-thumb {
+            background: var(--market-color);
+            border-radius: 3px;
+        }
+
+        /* Item Colors */
+        .worm { background: radial-gradient(circle, #8B4513, #654321); color: #FFF; }
+        .gold { background: radial-gradient(circle, #FFD700, #FFA500); color: #FFF; }
+        .silver { background: radial-gradient(circle, #C0C0C0, #A9A9A9); color: #333; }
+        .diamond { background: radial-gradient(circle, #4EE2EC, #2AB7CA); color: #FFF; }
+        .corpse { background: radial-gradient(circle, #708090, #2F4F4F); color: #FFF; }
+        .mouse { background: radial-gradient(circle, #A0522D, #8B4513); color: #FFF; }
+        .grass { background: radial-gradient(circle, #7CFC00, #32CD32); color: #FFF; }
     </style>
 </head>
 <body>
@@ -847,261 +546,103 @@
             <div class="user-info">
                 <div class="balance" id="userBalance">
                     <i class="fas fa-coins"></i>
-                    <span id="balanceAmount">0</span> xu
+                    <span id="balanceAmount">113</span> xu
                 </div>
-                <button class="btn btn-secondary btn-sm" id="logoutBtn" style="display: none;">
+                <button class="btn btn-secondary btn-sm" id="logoutBtn">
                     <i class="fas fa-sign-out-alt"></i> Đăng xuất
                 </button>
             </div>
         </div>
 
-        <!-- Authentication Forms -->
-        <div class="auth-form active" id="loginForm">
-            <h2><i class="fas fa-sign-in-alt"></i> Đăng nhập</h2>
-            <div class="form-group">
-                <label for="loginUsername">Tên đăng nhập</label>
-                <input type="text" id="loginUsername" placeholder="Nhập tên đăng nhập">
-            </div>
-            <div class="form-group">
-                <label for="loginPassword">Mật khẩu</label>
-                <input type="password" id="loginPassword" placeholder="Nhập mật khẩu">
-            </div>
-            <button class="btn" id="loginBtn">
-                <i class="fas fa-sign-in-alt"></i> Đăng nhập
-            </button>
-            <div class="switch-auth">
-                Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký ngay</a>
-            </div>
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+            <div class="tab active" data-tab="game">Đào đá</div>
+            <div class="tab" data-tab="inventory">Kho đồ</div>
+            <div class="tab" data-tab="market">Chợ giao dịch</div>
+            <div class="tab" data-tab="leaderboard">Xếp hạng</div>
+            <div class="tab" data-tab="chat">Trò chuyện</div>
         </div>
 
-        <div class="auth-form" id="registerForm">
-            <h2><i class="fas fa-user-plus"></i> Đăng ký tài khoản</h2>
-            <div class="form-group">
-                <label for="registerUsername">Tên đăng nhập</label>
-                <input type="text" id="registerUsername" placeholder="Nhập tên đăng nhập">
-            </div>
-            <div class="form-group">
-                <label for="registerPassword">Mật khẩu</label>
-                <input type="password" id="registerPassword" placeholder="Nhập mật khẩu">
-            </div>
-            <div class="form-group">
-                <label for="registerConfirmPassword">Xác nhận mật khẩu</label>
-                <input type="password" id="registerConfirmPassword" placeholder="Nhập lại mật khẩu">
-            </div>
-            <button class="btn btn-success" id="registerBtn">
-                <i class="fas fa-user-plus"></i> Đăng ký
-            </button>
-            <div class="switch-auth">
-                Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập ngay</a>
-            </div>
-        </div>
-
-        <!-- Main Game Area (hidden until logged in) -->
-        <div id="gameContent" style="display: none;">
-            <!-- Tabs Navigation -->
-            <div class="tabs">
-                <div class="tab active" data-tab="game">Đào đá</div>
-                <div class="tab" data-tab="inventory">Kho đồ</div>
-                <div class="tab" data-tab="market">Chợ giao dịch</div>
-                <div class="tab" data-tab="leaderboard">Bảng xếp hạng</div>
-                <div class="tab" data-tab="chat">Trò chuyện</div>
-                <div class="tab" data-tab="transactions">Lịch sử giao dịch</div>
-            </div>
-
-            <!-- Game Tab -->
-            <div class="tab-content active" id="gameTab">
-                <div class="game-container">
-                    <div class="depth-info">
-                        <div>
-                            <div>Độ sâu hiện tại: <span id="currentDepth">0</span>m</div>
-                            <div class="depth-meter">
-                                <div class="depth-fill" id="depthFill"></div>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <div>Khu vực: <span id="currentZone">0-100m</span></div>
-                            <div style="font-size: 12px; color: #AAA;">Tỉ lệ vật phẩm thay đổi theo độ sâu</div>
-                        </div>
-                    </div>
-
-                    <div class="game-area" id="gameArea">
-                        <div class="ground"></div>
-                        <div class="miner" id="miner">
-                            <div class="miner-head"></div>
-                            <div class="miner-body"></div>
-                            <div class="miner-light"></div>
-                        </div>
-                        <!-- Items will be dynamically added here -->
-                    </div>
-
-                    <div class="controls">
-                        <button class="control-btn" id="digBtn">
-                            <i class="fas fa-digging"></i>
-                        </button>
-                        <button class="control-btn" id="upBtn">
-                            <i class="fas fa-arrow-up"></i>
-                        </button>
-                        <button class="control-btn" id="downBtn">
-                            <i class="fas fa-arrow-down"></i>
-                        </button>
-                    </div>
+        <!-- Market Tab -->
+        <div class="tab-content active" id="marketTab">
+            <div class="market-container">
+                <div class="section-title">
+                    <h3><i class="fas fa-store"></i> Chợ giao dịch</h3>
+                    <div class="market-stats" id="marketStats">Đang có 0 tin rao bán</div>
                 </div>
-
-                <!-- Prize Notification -->
-                <div style="background: rgba(255, 215, 0, 0.2); padding: 10px; border-radius: 10px; margin-top: 15px; border-left: 5px solid #FFD700;">
-                    <div style="font-weight: bold; color: #FFD700;">
-                        <i class="fas fa-trophy"></i> PHẦN THƯỞNG HẰNG NGÀY
-                    </div>
-                    <div style="font-size: 12px; margin-top: 5px;">
-                        Top 1: 50,000 VND | Top 2: 50,000 VND | Top 3: 50,000 VND
-                    </div>
-                    <div style="font-size: 10px; margin-top: 5px; color: #AAA;">
-                        Liên hệ admin Telegram <a href="https://t.me/cskhh1" style="color: #0088cc; text-decoration: none;">@cskhh1</a> để nhận tiền mặt vào ngày hôm sau
-                    </div>
+                
+                <div class="market-tabs">
+                    <div class="market-tab active" data-market-tab="browse">Duyệt tin rao</div>
+                    <div class="market-tab" data-market-tab="myListings">Tin của tôi</div>
+                    <div class="market-tab" data-market-tab="create">Đăng tin mới</div>
                 </div>
-            </div>
-
-            <!-- Inventory Tab -->
-            <div class="tab-content" id="inventoryTab">
-                <div class="inventory-container">
-                    <div class="section-title">
-                        <h3><i class="fas fa-backpack"></i> Kho đồ của bạn</h3>
-                        <div>
-                            <button class="btn btn-success btn-sm" id="sellAllBtn">
-                                <i class="fas fa-money-bill-wave"></i> Bán tất cả
-                            </button>
-                            <button class="btn btn-market btn-sm" id="openCreateListingBtn">
-                                <i class="fas fa-store"></i> Đăng bán
-                            </button>
-                        </div>
-                    </div>
-                    <div class="inventory-items" id="inventoryItems">
-                        <!-- Inventory items will be dynamically added here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Market Tab -->
-            <div class="tab-content" id="marketTab">
-                <div class="market-container">
-                    <div class="section-title">
-                        <h3><i class="fas fa-store"></i> Chợ giao dịch</h3>
-                        <div style="font-size: 12px; color: #AAA;" id="marketStats">Đang có 0 tin rao bán</div>
+                
+                <!-- Browse Listings -->
+                <div class="market-content active" id="browseListings">
+                    <div class="market-filters">
+                        <select class="filter-select" id="filterItem">
+                            <option value="">Tất cả vật phẩm</option>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        <select class="filter-select" id="filterSort">
+                            <option value="price_asc">Giá: Thấp đến cao</option>
+                            <option value="price_desc">Giá: Cao đến thấp</option>
+                            <option value="date_desc">Mới nhất</option>
+                            <option value="date_asc">Cũ nhất</option>
+                        </select>
+                        <button class="btn btn-sm" id="applyFiltersBtn">
+                            <i class="fas fa-filter"></i> Lọc
+                        </button>
                     </div>
                     
-                    <div class="market-tabs">
-                        <div class="market-tab active" data-market-tab="browse">Duyệt tin rao</div>
-                        <div class="market-tab" data-market-tab="myListings">Tin của tôi</div>
-                        <div class="market-tab" data-market-tab="create">Đăng tin mới</div>
+                    <div class="market-listings" id="marketListings">
+                        <!-- Market listings will be dynamically added here -->
                     </div>
-                    
-                    <!-- Browse Listings -->
-                    <div class="market-content active" id="browseListings">
-                        <div class="market-filters">
-                            <select class="filter-select" id="filterItem">
-                                <option value="">Tất cả vật phẩm</option>
+                </div>
+                
+                <!-- My Listings -->
+                <div class="market-content" id="myListings">
+                    <div class="market-listings" id="myListingsContainer">
+                        <!-- My listings will be dynamically added here -->
+                    </div>
+                </div>
+                
+                <!-- Create Listing - FIXED VERSION -->
+                <div class="market-content" id="createListing">
+                    <div class="create-listing-form">
+                        <div class="form-group">
+                            <label for="listingItem"><i class="fas fa-gem"></i> Chọn vật phẩm</label>
+                            <select id="listingItem">
+                                <option value="">-- Chọn vật phẩm --</option>
                                 <!-- Options will be populated dynamically -->
                             </select>
-                            <select class="filter-select" id="filterSort">
-                                <option value="price_asc">Giá: Thấp đến cao</option>
-                                <option value="price_desc">Giá: Cao đến thấp</option>
-                                <option value="date_desc">Mới nhất</option>
-                                <option value="date_asc">Cũ nhất</option>
-                            </select>
-                            <button class="btn btn-sm" id="applyFiltersBtn">
-                                <i class="fas fa-filter"></i> Lọc
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="listingQuantity"><i class="fas fa-hashtag"></i> Số lượng</label>
+                                <input type="number" id="listingQuantity" min="1" value="1" placeholder="Nhập số lượng">
+                            </div>
+                            <div class="form-group">
+                                <label for="listingPrice"><i class="fas fa-coins"></i> Giá mỗi cái (xu)</label>
+                                <input type="number" id="listingPrice" min="1" value="10" placeholder="Nhập giá">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="listingDescription"><i class="fas fa-file-alt"></i> Mô tả (tùy chọn)</label>
+                            <textarea id="listingDescription" placeholder="Mô tả về vật phẩm của bạn... Ví dụ: 'Vàng chất lượng cao, mới đào sáng nay'"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button class="btn btn-market" id="createListingBtn">
+                                <i class="fas fa-paper-plane"></i> Đăng bán ngay
                             </button>
                         </div>
                         
-                        <div class="market-listings" id="marketListings">
-                            <!-- Market listings will be dynamically added here -->
+                        <div style="margin-top: 15px; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 8px; font-size: 12px; color: #AAA;">
+                            <i class="fas fa-info-circle"></i> <strong>Lưu ý:</strong> Vật phẩm sẽ được trừ khỏi kho của bạn khi đăng bán. Bạn có thể hủy tin bất cứ lúc nào.
                         </div>
-                    </div>
-                    
-                    <!-- My Listings -->
-                    <div class="market-content" id="myListings">
-                        <div class="market-listings" id="myListingsContainer">
-                            <!-- My listings will be dynamically added here -->
-                        </div>
-                    </div>
-                    
-                    <!-- Create Listing -->
-                    <div class="market-content" id="createListing">
-                        <div class="create-listing-form">
-                            <div class="form-group">
-                                <label for="listingItem">Chọn vật phẩm</label>
-                                <select id="listingItem">
-                                    <!-- Options will be populated dynamically -->
-                                </select>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="listingQuantity">Số lượng</label>
-                                    <input type="number" id="listingQuantity" min="1" value="1">
-                                </div>
-                                <div class="form-group">
-                                    <label for="listingPrice">Giá mỗi cái (xu)</label>
-                                    <input type="number" id="listingPrice" min="1" value="10">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="listingDescription">Mô tả (tùy chọn)</label>
-                                <textarea id="listingDescription" placeholder="Mô tả về vật phẩm của bạn..."></textarea>
-                            </div>
-                            
-                            <button class="btn btn-market" id="createListingBtn">
-                                <i class="fas fa-paper-plane"></i> Đăng bán
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Leaderboard Tab -->
-            <div class="tab-content" id="leaderboardTab">
-                <div class="leaderboard-container">
-                    <div class="section-title">
-                        <h3><i class="fas fa-trophy"></i> Bảng xếp hạng</h3>
-                        <div style="font-size: 12px; color: #AAA;">Cập nhật theo thời gian thực</div>
-                    </div>
-                    <div class="leaderboard" id="leaderboard">
-                        <!-- Leaderboard items will be dynamically added here -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chat Tab -->
-            <div class="tab-content" id="chatTab">
-                <div class="chat-container">
-                    <div class="section-title">
-                        <h3><i class="fas fa-comments"></i> Trò chuyện</h3>
-                        <div style="font-size: 12px; color: #AAA;" id="onlineCount">Đang online: 1</div>
-                    </div>
-                    <div class="chat-messages" id="chatMessages">
-                        <!-- Chat messages will be dynamically added here -->
-                    </div>
-                    <div class="chat-input">
-                        <input type="text" id="chatInput" placeholder="Nhập tin nhắn của bạn...">
-                        <button class="btn btn-sm" id="sendChatBtn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Transactions Tab -->
-            <div class="tab-content" id="transactionsTab">
-                <div class="market-container">
-                    <div class="section-title">
-                        <h3><i class="fas fa-history"></i> Lịch sử giao dịch</h3>
-                        <button class="btn btn-sm btn-secondary" id="refreshTransactionsBtn">
-                            <i class="fas fa-sync-alt"></i> Làm mới
-                        </button>
-                    </div>
-                    <div class="market-listings" id="transactionsList">
-                        <!-- Transactions will be dynamically added here -->
                     </div>
                 </div>
             </div>
@@ -1114,182 +655,40 @@
         </div>
     </div>
 
-    <!-- Listing Detail Modal -->
-    <div class="modal" id="listingModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modalTitle">Chi tiết tin rao</h3>
-                <button class="close-modal" id="closeModal">&times;</button>
-            </div>
-            <div id="modalContent">
-                <!-- Modal content will be dynamically added here -->
-            </div>
-        </div>
-    </div>
-
     <!-- Notification -->
     <div class="notification" id="notification">
         <div id="notificationMessage">Thông báo!</div>
     </div>
 
     <script>
-        // Game Database
-        const GameDatabase = {
-            users: JSON.parse(localStorage.getItem('miningGameUsers_v2')) || [],
-            listings: JSON.parse(localStorage.getItem('miningGameListings')) || [],
-            transactions: JSON.parse(localStorage.getItem('miningGameTransactions')) || [],
-            chatMessages: JSON.parse(localStorage.getItem('miningGameChat_v2')) || [],
-            leaderboard: JSON.parse(localStorage.getItem('miningGameLeaderboard_v2')) || [],
-            
-            saveUsers: function() {
-                localStorage.setItem('miningGameUsers_v2', JSON.stringify(this.users));
-            },
-            
-            saveListings: function() {
-                localStorage.setItem('miningGameListings', JSON.stringify(this.listings));
-            },
-            
-            saveTransactions: function() {
-                localStorage.setItem('miningGameTransactions', JSON.stringify(this.transactions));
-            },
-            
-            saveChat: function() {
-                localStorage.setItem('miningGameChat_v2', JSON.stringify(this.chatMessages));
-            },
-            
-            saveLeaderboard: function() {
-                localStorage.setItem('miningGameLeaderboard_v2', JSON.stringify(this.leaderboard));
-            },
-            
-            // User methods
-            findUser: function(username) {
-                return this.users.find(u => u.username === username);
-            },
-            
-            updateUser: function(username, updates) {
-                const userIndex = this.users.findIndex(u => u.username === username);
-                if (userIndex !== -1) {
-                    this.users[userIndex] = { ...this.users[userIndex], ...updates };
-                    this.saveUsers();
-                    return true;
-                }
-                return false;
-            },
-            
-            // Listing methods
-            addListing: function(listing) {
-                this.listings.push(listing);
-                this.saveListings();
-            },
-            
-            removeListing: function(listingId) {
-                this.listings = this.listings.filter(l => l.id !== listingId);
-                this.saveListings();
-            },
-            
-            findListing: function(listingId) {
-                return this.listings.find(l => l.id === listingId);
-            },
-            
-            updateListing: function(listingId, updates) {
-                const listingIndex = this.listings.findIndex(l => l.id === listingId);
-                if (listingIndex !== -1) {
-                    this.listings[listingIndex] = { ...this.listings[listingIndex], ...updates };
-                    this.saveListings();
-                    return true;
-                }
-                return false;
-            },
-            
-            // Transaction methods
-            addTransaction: function(transaction) {
-                this.transactions.push(transaction);
-                this.saveTransactions();
-            },
-            
-            getUserTransactions: function(username) {
-                return this.transactions.filter(t => 
-                    t.buyer === username || t.seller === username
-                ).sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-            }
-        };
-
-        // Game Data and State
-        const gameState = {
-            loggedIn: false,
-            username: '',
-            balance: 0,
-            depth: 0,
-            zone: '0-100m',
-            inventory: {
-                worm: 0,
-                gold: 0,
-                silver: 0,
-                diamond: 0,
-                corpse: 0,
-                mouse: 0,
-                grass: 0
-            },
-            itemPrices: {
-                worm: 3,
-                gold: 50,
-                silver: 15,
-                diamond: 100,
-                corpse: 1,
-                mouse: 4,
-                grass: 0
-            },
-            baseRates: {
-                worm: 80,
-                gold: 10,
-                silver: 20,
-                diamond: 5,
-                corpse: 89,
-                mouse: 70,
-                grass: 100
-            },
-            currentRates: {},
-            mining: false
-        };
-
         // Item configurations
         const items = [
-            { id: 'worm', name: 'Giun', icon: '🐛', color: '#8B4513' },
-            { id: 'gold', name: 'Vàng', icon: '🥇', color: '#FFD700' },
-            { id: 'silver', name: 'Bạc', icon: '🥈', color: '#C0C0C0' },
-            { id: 'diamond', name: 'Kim cương', icon: '💎', color: '#4EE2EC' },
-            { id: 'corpse', name: 'Xác chết', icon: '💀', color: '#708090' },
-            { id: 'mouse', name: 'Chuột', icon: '🐁', color: '#A0522D' },
-            { id: 'grass', name: 'Cỏ', icon: '🌿', color: '#7CFC00' }
+            { id: 'worm', name: 'Giun', icon: '🐛', color: '#8B4513', price: 3 },
+            { id: 'gold', name: 'Vàng', icon: '🥇', color: '#FFD700', price: 50 },
+            { id: 'silver', name: 'Bạc', icon: '🥈', color: '#C0C0C0', price: 15 },
+            { id: 'diamond', name: 'Kim cương', icon: '💎', color: '#4EE2EC', price: 100 },
+            { id: 'corpse', name: 'Xác chết', icon: '💀', color: '#708090', price: 1 },
+            { id: 'mouse', name: 'Chuột', icon: '🐁', color: '#A0522D', price: 4 },
+            { id: 'grass', name: 'Cỏ', icon: '🌿', color: '#7CFC00', price: 0 }
         ];
 
+        // Mock inventory (in real app, load from localStorage/database)
+        const inventory = {
+            worm: 5,
+            gold: 2,
+            silver: 3,
+            diamond: 0,
+            corpse: 10,
+            mouse: 7,
+            grass: 15
+        };
+
+        // Mock market listings
+        let marketListings = [];
+
         // DOM Elements
-        const loginForm = document.getElementById('loginForm');
-        const registerForm = document.getElementById('registerForm');
-        const gameContent = document.getElementById('gameContent');
-        const loginBtn = document.getElementById('loginBtn');
-        const registerBtn = document.getElementById('registerBtn');
-        const logoutBtn = document.getElementById('logoutBtn');
-        const showRegister = document.getElementById('showRegister');
-        const showLogin = document.getElementById('showLogin');
         const balanceAmount = document.getElementById('balanceAmount');
-        const currentDepth = document.getElementById('currentDepth');
-        const depthFill = document.getElementById('depthFill');
-        const currentZone = document.getElementById('currentZone');
-        const gameArea = document.getElementById('gameArea');
-        const miner = document.getElementById('miner');
-        const digBtn = document.getElementById('digBtn');
-        const upBtn = document.getElementById('upBtn');
-        const downBtn = document.getElementById('downBtn');
-        const inventoryItems = document.getElementById('inventoryItems');
-        const sellAllBtn = document.getElementById('sellAllBtn');
-        const openCreateListingBtn = document.getElementById('openCreateListingBtn');
-        const leaderboard = document.getElementById('leaderboard');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const sendChatBtn = document.getElementById('sendChatBtn');
-        const notification = document.getElementById('notification');
-        const notificationMessage = document.getElementById('notificationMessage');
+        const logoutBtn = document.getElementById('logoutBtn');
         const tabs = document.querySelectorAll('.tab');
         const tabContents = document.querySelectorAll('.tab-content');
         const marketTabs = document.querySelectorAll('.market-tab');
@@ -1298,582 +697,96 @@
         const filterItem = document.getElementById('filterItem');
         const filterSort = document.getElementById('filterSort');
         const applyFiltersBtn = document.getElementById('applyFiltersBtn');
-        const marketListings = document.getElementById('marketListings');
+        const marketListingsContainer = document.getElementById('marketListings');
         const myListingsContainer = document.getElementById('myListingsContainer');
         const listingItem = document.getElementById('listingItem');
         const listingQuantity = document.getElementById('listingQuantity');
         const listingPrice = document.getElementById('listingPrice');
         const listingDescription = document.getElementById('listingDescription');
         const createListingBtn = document.getElementById('createListingBtn');
-        const refreshTransactionsBtn = document.getElementById('refreshTransactionsBtn');
-        const transactionsList = document.getElementById('transactionsList');
-        const listingModal = document.getElementById('listingModal');
-        const closeModal = document.getElementById('closeModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalContent = document.getElementById('modalContent');
+        const notification = document.getElementById('notification');
+        const notificationMessage = document.getElementById('notificationMessage');
 
-        // Initialize game
-        function initGame() {
-            // Check if user is already logged in
-            const currentUser = JSON.parse(localStorage.getItem('currentMiningUser_v2'));
-            if (currentUser) {
-                loginSuccess(currentUser);
-            }
+        // Initialize
+        function init() {
+            // Populate item filters
+            populateItemFilters();
             
-            // Initialize item rates
-            updateRatesByDepth();
+            // Load market listings
+            loadMarketListings();
+            
+            // Load my listings
+            loadMyListings();
             
             // Setup event listeners
             setupEventListeners();
             
-            // Initialize market filters
-            initMarketFilters();
-            
-            // Load initial data
-            loadLeaderboard();
-            loadChatMessages();
-            loadMarketListings();
-            loadMyListings();
-            loadTransactions();
-            
-            // Update online count
-            updateOnlineCount();
+            // Show welcome message
+            showNotification('Chào mừng đến với chợ giao dịch!', 'success');
         }
 
-        // Setup event listeners
-        function setupEventListeners() {
-            // Auth events
-            loginBtn.addEventListener('click', handleLogin);
-            registerBtn.addEventListener('click', handleRegister);
-            logoutBtn.addEventListener('click', handleLogout);
-            showRegister.addEventListener('click', () => switchAuthForm('register'));
-            showLogin.addEventListener('click', () => switchAuthForm('login'));
-            
-            // Game events
-            digBtn.addEventListener('click', dig);
-            upBtn.addEventListener('click', moveUp);
-            downBtn.addEventListener('click', moveDown);
-            
-            // Inventory events
-            sellAllBtn.addEventListener('click', sellAllItems);
-            openCreateListingBtn.addEventListener('click', () => {
-                switchTab('market');
-                switchMarketTab('create');
-            });
-            
-            // Market events
-            marketTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const tabId = tab.getAttribute('data-market-tab');
-                    switchMarketTab(tabId);
-                });
-            });
-            
-            applyFiltersBtn.addEventListener('click', loadMarketListings);
-            createListingBtn.addEventListener('click', handleCreateListing);
-            
-            // Transactions events
-            refreshTransactionsBtn.addEventListener('click', loadTransactions);
-            
-            // Chat events
-            sendChatBtn.addEventListener('click', sendChatMessage);
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') sendChatMessage();
-            });
-            
-            // Tab events
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const tabId = tab.getAttribute('data-tab');
-                    switchTab(tabId);
-                    
-                    // Refresh data when switching to certain tabs
-                    if (tabId === 'market') {
-                        loadMarketListings();
-                        loadMyListings();
-                    } else if (tabId === 'transactions') {
-                        loadTransactions();
-                    }
-                });
-            });
-            
-            // Modal events
-            closeModal.addEventListener('click', () => {
-                listingModal.classList.remove('active');
-            });
-            
-            // Close modal when clicking outside
-            listingModal.addEventListener('click', (e) => {
-                if (e.target === listingModal) {
-                    listingModal.classList.remove('active');
-                }
-            });
-        }
-
-        // Initialize market filters
-        function initMarketFilters() {
-            // Populate item filter options
+        // Populate item filters
+        function populateItemFilters() {
+            // Clear existing options
             filterItem.innerHTML = '<option value="">Tất cả vật phẩm</option>';
-            listingItem.innerHTML = '<option value="">Chọn vật phẩm</option>';
+            listingItem.innerHTML = '<option value="">-- Chọn vật phẩm --</option>';
             
+            // Add items to filters
             items.forEach(item => {
+                // For browse filter
                 filterItem.innerHTML += `<option value="${item.id}">${item.icon} ${item.name}</option>`;
-                listingItem.innerHTML += `<option value="${item.id}">${item.icon} ${item.name}</option>`;
-            });
-        }
-
-        // Auth functions
-        function handleLogin() {
-            const username = document.getElementById('loginUsername').value;
-            const password = document.getElementById('loginPassword').value;
-            
-            if (!username || !password) {
-                showNotification('Vui lòng nhập đầy đủ thông tin!', 'error');
-                return;
-            }
-            
-            const user = GameDatabase.findUser(username);
-            
-            if (user && user.password === password) {
-                loginSuccess(user);
-                showNotification(`Chào mừng ${username} quay trở lại!`, 'success');
-            } else {
-                showNotification('Tên đăng nhập hoặc mật khẩu không đúng!', 'error');
-            }
-        }
-
-        function handleRegister() {
-            const username = document.getElementById('registerUsername').value;
-            const password = document.getElementById('registerPassword').value;
-            const confirmPassword = document.getElementById('registerConfirmPassword').value;
-            
-            if (!username || !password || !confirmPassword) {
-                showNotification('Vui lòng nhập đầy đủ thông tin!', 'error');
-                return;
-            }
-            
-            if (password !== confirmPassword) {
-                showNotification('Mật khẩu xác nhận không khớp!', 'error');
-                return;
-            }
-            
-            if (username.length < 3) {
-                showNotification('Tên đăng nhập phải có ít nhất 3 ký tự!', 'error');
-                return;
-            }
-            
-            if (password.length < 4) {
-                showNotification('Mật khẩu phải có ít nhất 4 ký tự!', 'error');
-                return;
-            }
-            
-            if (GameDatabase.findUser(username)) {
-                showNotification('Tên đăng nhập đã tồn tại!', 'error');
-                return;
-            }
-            
-            const newUser = {
-                username,
-                password,
-                balance: 100, // Starting balance
-                inventory: { ...gameState.inventory },
-                totalEarned: 0,
-                joinDate: new Date().toISOString(),
-                marketListings: []
-            };
-            
-            GameDatabase.users.push(newUser);
-            GameDatabase.saveUsers();
-            
-            showNotification('Đăng ký thành công! Bạn đã nhận được 100 xu.', 'success');
-            switchAuthForm('login');
-            document.getElementById('loginUsername').value = username;
-            document.getElementById('loginPassword').value = password;
-        }
-
-        function loginSuccess(user) {
-            gameState.loggedIn = true;
-            gameState.username = user.username;
-            gameState.balance = user.balance;
-            gameState.inventory = { ...user.inventory };
-            
-            // Save current user to localStorage
-            localStorage.setItem('currentMiningUser_v2', JSON.stringify(user));
-            
-            // Update UI
-            loginForm.classList.remove('active');
-            registerForm.classList.remove('active');
-            gameContent.style.display = 'block';
-            logoutBtn.style.display = 'block';
-            balanceAmount.textContent = gameState.balance;
-            
-            // Update inventory display
-            updateInventoryDisplay();
-            
-            // Add welcome chat message
-            addChatMessage('Hệ thống', `${user.username} đã tham gia trò chuyện!`, true);
-        }
-
-        function handleLogout() {
-            // Save user data
-            GameDatabase.updateUser(gameState.username, {
-                balance: gameState.balance,
-                inventory: { ...gameState.inventory }
-            });
-            
-            // Add leave chat message
-            addChatMessage('Hệ thống', `${gameState.username} đã rời khỏi trò chuyện!`, true);
-            
-            // Reset game state
-            gameState.loggedIn = false;
-            gameState.username = '';
-            gameState.balance = 0;
-            gameState.depth = 0;
-            gameState.inventory = {
-                worm: 0,
-                gold: 0,
-                silver: 0,
-                diamond: 0,
-                corpse: 0,
-                mouse: 0,
-                grass: 0
-            };
-            
-            // Update UI
-            gameContent.style.display = 'none';
-            logoutBtn.style.display = 'none';
-            loginForm.classList.add('active');
-            
-            // Clear current user
-            localStorage.removeItem('currentMiningUser_v2');
-            
-            // Reset forms
-            document.getElementById('loginUsername').value = '';
-            document.getElementById('loginPassword').value = '';
-            document.getElementById('registerUsername').value = '';
-            document.getElementById('registerPassword').value = '';
-            document.getElementById('registerConfirmPassword').value = '';
-            
-            showNotification('Đã đăng xuất thành công!', 'success');
-        }
-
-        function switchAuthForm(form) {
-            if (form === 'register') {
-                loginForm.classList.remove('active');
-                registerForm.classList.add('active');
-            } else {
-                registerForm.classList.remove('active');
-                loginForm.classList.add('active');
-            }
-        }
-
-        // Game functions
-        function updateRatesByDepth() {
-            const depth = gameState.depth;
-            let commonMod = 0;
-            let rareMod = 0;
-            let epicMod = 0;
-            
-            if (depth <= 100) {
-                gameState.zone = '0-100m';
-                commonMod = 5;
-                rareMod = -2;
-                epicMod = -2;
-            } else if (depth <= 500) {
-                gameState.zone = '100-500m';
-                commonMod = -30;
-                rareMod = 10;
-                epicMod = 8;
-            } else {
-                gameState.zone = '500m+';
-                commonMod = -50;
-                rareMod = 20;
-                epicMod = 15;
-            }
-            
-            // Apply modifications
-            gameState.currentRates = { ...gameState.baseRates };
-            
-            // Common items: worm, corpse, mouse, grass
-            gameState.currentRates.worm = Math.max(0, gameState.baseRates.worm + commonMod);
-            gameState.currentRates.corpse = Math.max(0, gameState.baseRates.corpse + commonMod);
-            gameState.currentRates.mouse = Math.max(0, gameState.baseRates.mouse + commonMod);
-            gameState.currentRates.grass = Math.max(0, gameState.baseRates.grass + commonMod);
-            
-            // Rare items: gold, silver
-            gameState.currentRates.gold = Math.max(0, gameState.baseRates.gold + rareMod);
-            gameState.currentRates.silver = Math.max(0, gameState.baseRates.silver + rareMod);
-            
-            // Epic item: diamond
-            gameState.currentRates.diamond = Math.max(0, gameState.baseRates.diamond + epicMod);
-            
-            // Update UI
-            currentZone.textContent = gameState.zone;
-        }
-
-        function dig() {
-            if (!gameState.loggedIn || gameState.mining) return;
-            
-            gameState.mining = true;
-            digBtn.disabled = true;
-            
-            // Show mining animation
-            digBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-            
-            // Determine what item is found based on rates
-            const totalRate = Object.values(gameState.currentRates).reduce((a, b) => a + b, 0);
-            let randomValue = Math.random() * totalRate;
-            
-            let foundItem = null;
-            for (const [itemId, rate] of Object.entries(gameState.currentRates)) {
-                if (randomValue <= rate) {
-                    foundItem = itemId;
-                    break;
-                }
-                randomValue -= rate;
-            }
-            
-            // If no item found (shouldn't happen), default to grass
-            if (!foundItem) foundItem = 'grass';
-            
-            // Add item to inventory
-            gameState.inventory[foundItem]++;
-            
-            // Update user data in database
-            GameDatabase.updateUser(gameState.username, {
-                inventory: { ...gameState.inventory }
-            });
-            
-            // Show item animation in game area
-            showItemAnimation(foundItem);
-            
-            // Update inventory display
-            updateInventoryDisplay();
-            
-            // Update leaderboard
-            updateLeaderboard();
-            
-            // Show notification
-            const itemName = items.find(item => item.id === foundItem).name;
-            const itemPrice = gameState.itemPrices[foundItem];
-            showNotification(`Bạn đã đào được ${itemName}! Giá trị: ${itemPrice} xu`, 'success');
-            
-            // Reset mining state after delay
-            setTimeout(() => {
-                gameState.mining = false;
-                digBtn.disabled = false;
-                digBtn.innerHTML = '<i class="fas fa-digging"></i>';
-            }, 1000);
-        }
-
-        function showItemAnimation(itemId) {
-            const item = items.find(i => i.id === itemId);
-            const itemElement = document.createElement('div');
-            itemElement.className = `item ${itemId}`;
-            itemElement.innerHTML = item.icon;
-            itemElement.style.left = `${50 + (Math.random() * 30 - 15)}%`;
-            itemElement.style.bottom = `${50 + (Math.random() * 10)}%`;
-            
-            gameArea.appendChild(itemElement);
-            
-            // Trigger animation
-            setTimeout(() => {
-                itemElement.classList.add('show');
-            }, 10);
-            
-            // Remove after animation
-            setTimeout(() => {
-                itemElement.classList.remove('show');
-                setTimeout(() => {
-                    if (itemElement.parentNode) {
-                        gameArea.removeChild(itemElement);
-                    }
-                }, 300);
-            }, 2000);
-        }
-
-        function moveUp() {
-            if (!gameState.loggedIn || gameState.mining) return;
-            
-            gameState.depth = Math.max(0, gameState.depth - 10);
-            updateDepthDisplay();
-            updateRatesByDepth();
-        }
-
-        function moveDown() {
-            if (!gameState.loggedIn || gameState.mining) return;
-            
-            gameState.depth += 10;
-            updateDepthDisplay();
-            updateRatesByDepth();
-        }
-
-        function updateDepthDisplay() {
-            currentDepth.textContent = gameState.depth;
-            
-            // Update depth meter (max depth: 600m for display purposes)
-            const depthPercent = Math.min(100, (gameState.depth / 600) * 100);
-            depthFill.style.width = `${depthPercent}%`;
-            
-            // Update miner position
-            const minerBottom = 50 - (gameState.depth / 600) * 40;
-            miner.style.bottom = `${minerBottom}%`;
-        }
-
-        // Inventory functions
-        function updateInventoryDisplay() {
-            inventoryItems.innerHTML = '';
-            
-            items.forEach(item => {
-                const count = gameState.inventory[item.id];
-                const price = gameState.itemPrices[item.id];
                 
-                const itemElement = document.createElement('div');
-                itemElement.className = 'inventory-item';
-                itemElement.innerHTML = `
-                    <div class="item-icon ${item.id}" style="background: ${item.color}">
-                        ${item.icon}
-                    </div>
-                    <div class="item-name">${item.name}</div>
-                    <div class="item-count">${count}</div>
-                    <div class="item-price">${price} xu/chiếc</div>
-                    <div class="item-actions">
-                        <button class="action-btn sell-btn" data-item="${item.id}">
-                            <i class="fas fa-money-bill-wave"></i> Bán
-                        </button>
-                        <button class="action-btn list-btn" data-item="${item.id}">
-                            <i class="fas fa-store"></i> Đăng bán
-                        </button>
-                    </div>
-                `;
-                
-                // Add event listeners to action buttons
-                const sellBtn = itemElement.querySelector('.sell-btn');
-                sellBtn.addEventListener('click', () => sellItem(item.id));
-                
-                const listBtn = itemElement.querySelector('.list-btn');
-                listBtn.addEventListener('click', () => {
-                    if (count > 0) {
-                        switchTab('market');
-                        switchMarketTab('create');
-                        listingItem.value = item.id;
-                        listingQuantity.value = 1;
-                        listingPrice.value = Math.max(10, Math.floor(price * 1.5));
-                    } else {
-                        showNotification(`Bạn không có ${item.name} để đăng bán!`, 'error');
-                    }
-                });
-                
-                inventoryItems.appendChild(itemElement);
+                // For create listing form
+                const hasItem = inventory[item.id] > 0;
+                const disabledAttr = !hasItem ? 'disabled' : '';
+                const stockInfo = hasItem ? ` (Có ${inventory[item.id]})` : ' (Hết hàng)';
+                listingItem.innerHTML += `<option value="${item.id}" ${disabledAttr}>${item.icon} ${item.name}${stockInfo}</option>`;
             });
-            
-            // Update balance display
-            balanceAmount.textContent = gameState.balance;
         }
 
-        function sellItem(itemId) {
-            const count = gameState.inventory[itemId];
-            if (count <= 0) {
-                showNotification(`Bạn không có ${items.find(i => i.id === itemId).name} để bán!`, 'error');
-                return;
-            }
-            
-            const price = gameState.itemPrices[itemId];
-            const total = count * price;
-            
-            gameState.balance += total;
-            gameState.inventory[itemId] = 0;
-            
-            // Update user data in database
-            GameDatabase.updateUser(gameState.username, {
-                balance: gameState.balance,
-                inventory: { ...gameState.inventory }
-            });
-            
-            // Update leaderboard with earnings
-            updateLeaderboard();
-            
-            // Record transaction
-            const transaction = {
-                id: 'tx_' + Date.now() + Math.random().toString(36).substr(2, 9),
-                type: 'sell_to_system',
-                itemId: itemId,
-                itemName: items.find(i => i.id === itemId).name,
-                quantity: count,
-                pricePerItem: price,
-                totalAmount: total,
-                seller: gameState.username,
-                buyer: 'Hệ thống',
-                timestamp: new Date().toISOString()
-            };
-            
-            GameDatabase.addTransaction(transaction);
-            
-            showNotification(`Bán thành công ${count} ${items.find(i => i.id === itemId).name} được ${total} xu!`, 'success');
-            updateInventoryDisplay();
-        }
-
-        function sellAllItems() {
-            let totalEarned = 0;
-            let itemsSold = [];
-            
-            Object.keys(gameState.inventory).forEach(itemId => {
-                const count = gameState.inventory[itemId];
-                if (count > 0) {
-                    const price = gameState.itemPrices[itemId];
-                    const total = count * price;
-                    totalEarned += total;
-                    itemsSold.push({ 
-                        itemId, 
-                        name: items.find(i => i.id === itemId).name, 
-                        count, 
-                        total 
-                    });
-                    gameState.inventory[itemId] = 0;
-                }
-            });
-            
-            if (totalEarned === 0) {
-                showNotification('Không có vật phẩm nào để bán!', 'error');
-                return;
-            }
-            
-            gameState.balance += totalEarned;
-            
-            // Update user data in database
-            GameDatabase.updateUser(gameState.username, {
-                balance: gameState.balance,
-                inventory: { ...gameState.inventory }
-            });
-            
-            // Update leaderboard with earnings
-            updateLeaderboard();
-            
-            // Record transactions
-            itemsSold.forEach(item => {
-                const transaction = {
-                    id: 'tx_' + Date.now() + Math.random().toString(36).substr(2, 9),
-                    type: 'sell_to_system',
-                    itemId: item.itemId,
-                    itemName: item.name,
-                    quantity: item.count,
-                    pricePerItem: item.total / item.count,
-                    totalAmount: item.total,
-                    seller: gameState.username,
-                    buyer: 'Hệ thống',
-                    timestamp: new Date().toISOString()
-                };
-                
-                GameDatabase.addTransaction(transaction);
-            });
-            
-            showNotification(`Bán tất cả thành công! Thu được ${totalEarned} xu`, 'success');
-            updateInventoryDisplay();
-        }
-
-        // Market functions
+        // Load market listings
         function loadMarketListings() {
-            let filteredListings = [...GameDatabase.listings];
+            // For demo, create some sample listings
+            if (marketListings.length === 0) {
+                marketListings = [
+                    {
+                        id: 'lst_1',
+                        itemId: 'gold',
+                        quantity: 2,
+                        price: 55,
+                        description: 'Vàng chất lượng cao',
+                        seller: 'Người chơi A',
+                        createdAt: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
+                        sold: false,
+                        cancelled: false
+                    },
+                    {
+                        id: 'lst_2',
+                        itemId: 'diamond',
+                        quantity: 1,
+                        price: 120,
+                        description: 'Kim cương sáng chói',
+                        seller: 'Người chơi B',
+                        createdAt: new Date(Date.now() - 7200000).toISOString(), // 2 hours ago
+                        sold: false,
+                        cancelled: false
+                    },
+                    {
+                        id: 'lst_3',
+                        itemId: 'worm',
+                        quantity: 10,
+                        price: 4,
+                        description: 'Giun tươi, mới bắt',
+                        seller: 'Người chơi C',
+                        createdAt: new Date(Date.now() - 1800000).toISOString(), // 30 minutes ago
+                        sold: false,
+                        cancelled: false
+                    }
+                ];
+            }
+            
+            // Apply filters
+            let filteredListings = [...marketListings];
             
             // Filter by item
             const selectedItem = filterItem.value;
@@ -1881,7 +794,7 @@
                 filteredListings = filteredListings.filter(l => l.itemId === selectedItem);
             }
             
-            // Filter out sold listings
+            // Filter out sold/cancelled listings
             filteredListings = filteredListings.filter(l => !l.sold && !l.cancelled);
             
             // Sort listings
@@ -1901,77 +814,52 @@
                     break;
             }
             
-            // Update market stats
+            // Update stats
             marketStats.textContent = `Đang có ${filteredListings.length} tin rao bán`;
             
             // Display listings
-            marketListings.innerHTML = '';
-            
-            if (filteredListings.length === 0) {
-                marketListings.innerHTML = `
-                    <div class="no-listings">
-                        <i class="fas fa-store-slash fa-3x" style="margin-bottom: 10px;"></i>
-                        <p>Không có tin rao bán nào!</p>
-                        <p style="font-size: 12px;">Hãy là người đầu tiên đăng tin bán vật phẩm</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            filteredListings.forEach(listing => {
-                const item = items.find(i => i.id === listing.itemId);
-                const listingElement = document.createElement('div');
-                listingElement.className = 'listing-item';
-                listingElement.innerHTML = `
-                    <div class="listing-info">
-                        <div class="item-icon ${listing.itemId}" style="background: ${item.color}">
-                            ${item.icon}
-                        </div>
-                        <div class="listing-details">
-                            <div style="font-weight: bold;">${item.name} x${listing.quantity}</div>
-                            <div class="listing-seller">Người bán: ${listing.seller}</div>
-                            <div style="font-size: 12px; margin-top: 5px;">${listing.description || 'Không có mô tả'}</div>
-                        </div>
-                    </div>
-                    <div class="listing-actions">
-                        <div style="text-align: right;">
-                            <div class="listing-price">${listing.price} xu/cái</div>
-                            <div style="font-size: 12px; color: #AAA;">Tổng: ${listing.price * listing.quantity} xu</div>
-                        </div>
-                        <button class="btn btn-sm btn-success buy-btn" data-listing-id="${listing.id}" style="margin-left: 10px;">
-                            <i class="fas fa-shopping-cart"></i> Mua
-                        </button>
-                    </div>
-                `;
-                
-                // Add event listener to buy button
-                const buyBtn = listingElement.querySelector('.buy-btn');
-                buyBtn.addEventListener('click', () => showListingModal(listing.id));
-                
-                marketListings.appendChild(listingElement);
-            });
+            displayListings(filteredListings, marketListingsContainer);
         }
 
+        // Load my listings
         function loadMyListings() {
-            const myListings = GameDatabase.listings.filter(l => 
-                l.seller === gameState.username && !l.sold && !l.cancelled
-            );
-            
-            myListingsContainer.innerHTML = '';
+            // Filter listings for current user (in real app, use actual username)
+            const myListings = marketListings.filter(l => l.seller === 'CurrentUser' && !l.sold && !l.cancelled);
             
             if (myListings.length === 0) {
                 myListingsContainer.innerHTML = `
                     <div class="no-listings">
-                        <i class="fas fa-clipboard-list fa-3x" style="margin-bottom: 10px;"></i>
+                        <i class="fas fa-clipboard-list"></i>
                         <p>Bạn chưa có tin rao bán nào!</p>
-                        <p style="font-size: 12px;">Hãy đăng tin bán vật phẩm của bạn</p>
+                        <p style="font-size: 12px; margin-top: 10px;">Hãy đăng tin bán vật phẩm của bạn</p>
                     </div>
                 `;
                 return;
             }
             
-            myListings.forEach(listing => {
+            displayListings(myListings, myListingsContainer, true);
+        }
+
+        // Display listings in container
+        function displayListings(listings, container, isMyListings = false) {
+            container.innerHTML = '';
+            
+            if (listings.length === 0) {
+                container.innerHTML = `
+                    <div class="no-listings">
+                        <i class="fas fa-store-slash"></i>
+                        <p>Không có tin rao bán nào!</p>
+                        <p style="font-size: 12px; margin-top: 10px;">${isMyListings ? 'Hãy đăng tin bán vật phẩm của bạn' : 'Hãy quay lại sau'}</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            listings.forEach(listing => {
                 const item = items.find(i => i.id === listing.itemId);
+                const totalPrice = listing.price * listing.quantity;
+                const timeAgo = getTimeAgo(new Date(listing.createdAt));
+                
                 const listingElement = document.createElement('div');
                 listingElement.className = 'listing-item';
                 listingElement.innerHTML = `
@@ -1980,46 +868,57 @@
                             ${item.icon}
                         </div>
                         <div class="listing-details">
-                            <div style="font-weight: bold;">${item.name} x${listing.quantity}</div>
-                            <div style="font-size: 12px; color: #AAA;">
-                                Đăng ngày: ${new Date(listing.createdAt).toLocaleDateString('vi-VN')}
-                            </div>
-                            <div style="font-size: 12px; margin-top: 5px;">${listing.description || 'Không có mô tả'}</div>
+                            <div style="font-weight: bold; font-size: 16px;">${item.name} ×${listing.quantity}</div>
+                            <div style="font-size: 12px; color: #AAA;">Người bán: ${listing.seller}</div>
+                            <div style="font-size: 12px; color: #AAA;">${timeAgo}</div>
+                            ${listing.description ? `<div style="font-size: 12px; margin-top: 5px; color: #DDD;">${listing.description}</div>` : ''}
                         </div>
                     </div>
                     <div class="listing-actions">
                         <div style="text-align: right;">
                             <div class="listing-price">${listing.price} xu/cái</div>
-                            <div style="font-size: 12px; color: #AAA;">Tổng: ${listing.price * listing.quantity} xu</div>
+                            <div style="font-size: 12px; color: #AAA;">Tổng: ${totalPrice} xu</div>
                         </div>
-                        <div style="display: flex; gap: 5px; margin-left: 10px;">
-                            <button class="btn btn-sm btn-secondary cancel-btn" data-listing-id="${listing.id}">
+                        ${isMyListings ? 
+                            `<button class="btn btn-secondary btn-sm cancel-listing-btn" data-id="${listing.id}">
                                 <i class="fas fa-times"></i> Hủy
-                            </button>
-                        </div>
+                            </button>` : 
+                            `<button class="btn btn-success btn-sm buy-listing-btn" data-id="${listing.id}">
+                                <i class="fas fa-shopping-cart"></i> Mua
+                            </button>`
+                        }
                     </div>
                 `;
                 
-                // Add event listener to cancel button
-                const cancelBtn = listingElement.querySelector('.cancel-btn');
-                cancelBtn.addEventListener('click', () => cancelListing(listing.id));
-                
-                myListingsContainer.appendChild(listingElement);
+                container.appendChild(listingElement);
             });
+            
+            // Add event listeners
+            if (isMyListings) {
+                document.querySelectorAll('.cancel-listing-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const listingId = this.getAttribute('data-id');
+                        cancelListing(listingId);
+                    });
+                });
+            } else {
+                document.querySelectorAll('.buy-listing-btn').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const listingId = this.getAttribute('data-id');
+                        buyListing(listingId);
+                    });
+                });
+            }
         }
 
+        // Handle create listing
         function handleCreateListing() {
-            if (!gameState.loggedIn) {
-                showNotification('Bạn cần đăng nhập để đăng tin bán!', 'error');
-                return;
-            }
-            
             const itemId = listingItem.value;
             const quantity = parseInt(listingQuantity.value);
             const price = parseInt(listingPrice.value);
             const description = listingDescription.value.trim();
             
-            // Validate inputs
+            // Validation
             if (!itemId) {
                 showNotification('Vui lòng chọn vật phẩm!', 'error');
                 return;
@@ -2031,582 +930,224 @@
             }
             
             if (!price || price < 1) {
-                showNotification('Giá phải lớn hơn 0!', 'error');
+                showNotification('Giá phải lớn hơn 0 xu!', 'error');
                 return;
             }
             
-            // Check if user has enough items
-            const availableQuantity = gameState.inventory[itemId];
+            // Check inventory
+            const availableQuantity = inventory[itemId];
             if (availableQuantity < quantity) {
                 const itemName = items.find(i => i.id === itemId).name;
-                showNotification(`Bạn chỉ có ${availableQuantity} ${itemName}, không đủ để đăng bán ${quantity} cái!`, 'error');
+                showNotification(`Bạn chỉ có ${availableQuantity} ${itemName}, không đủ số lượng!`, 'error');
                 return;
             }
             
-            // Create listing
-            const listing = {
+            // Create new listing
+            const newListing = {
                 id: 'lst_' + Date.now() + Math.random().toString(36).substr(2, 9),
                 itemId: itemId,
                 quantity: quantity,
                 price: price,
                 description: description,
-                seller: gameState.username,
+                seller: 'CurrentUser', // In real app, use actual username
                 createdAt: new Date().toISOString(),
                 sold: false,
-                cancelled: false,
-                buyer: null,
-                soldAt: null
+                cancelled: false
             };
             
-            // Deduct items from inventory
-            gameState.inventory[itemId] -= quantity;
+            // Add to listings
+            marketListings.push(newListing);
             
-            // Update user data in database
-            GameDatabase.updateUser(gameState.username, {
-                inventory: { ...gameState.inventory }
-            });
+            // Deduct from inventory
+            inventory[itemId] -= quantity;
             
-            // Add listing to database
-            GameDatabase.addListing(listing);
-            
-            // Update inventory display
-            updateInventoryDisplay();
+            // Update UI
+            populateItemFilters(); // Update available items
+            loadMarketListings(); // Refresh browse listings
+            loadMyListings(); // Refresh my listings
             
             // Switch to my listings tab
             switchMarketTab('myListings');
-            loadMyListings();
             
-            // Show success notification
-            const itemName = items.find(i => i.id === itemId).name;
-            showNotification(`Đã đăng bán ${quantity} ${itemName} với giá ${price} xu/cái!`, 'success');
+            // Show success message
+            const item = items.find(i => i.id === itemId);
+            showNotification(`Đã đăng bán ${quantity} ${item.name} với giá ${price} xu/cái!`, 'success');
             
             // Reset form
+            listingQuantity.value = 1;
+            listingPrice.value = 10;
             listingDescription.value = '';
         }
 
+        // Cancel listing
         function cancelListing(listingId) {
-            const listing = GameDatabase.findListing(listingId);
+            const listingIndex = marketListings.findIndex(l => l.id === listingId);
             
-            if (!listing) {
-                showNotification('Tin rao không tồn tại!', 'error');
+            if (listingIndex === -1) {
+                showNotification('Không tìm thấy tin rao!', 'error');
                 return;
             }
             
-            if (listing.seller !== gameState.username) {
-                showNotification('Bạn không có quyền hủy tin rao này!', 'error');
-                return;
-            }
+            const listing = marketListings[listingIndex];
             
-            if (listing.sold) {
-                showNotification('Tin rao đã được bán, không thể hủy!', 'error');
-                return;
-            }
-            
-            // Mark listing as cancelled
-            GameDatabase.updateListing(listingId, {
-                cancelled: true
-            });
+            // Mark as cancelled
+            marketListings[listingIndex].cancelled = true;
             
             // Return items to inventory
-            gameState.inventory[listing.itemId] += listing.quantity;
-            
-            // Update user data in database
-            GameDatabase.updateUser(gameState.username, {
-                inventory: { ...gameState.inventory }
-            });
-            
-            // Update inventory display
-            updateInventoryDisplay();
-            
-            // Reload my listings
-            loadMyListings();
-            
-            // Show notification
-            const itemName = items.find(i => i.id === listing.itemId).name;
-            showNotification(`Đã hủy tin rao bán ${listing.quantity} ${itemName}!`, 'success');
-        }
-
-        function showListingModal(listingId) {
-            const listing = GameDatabase.findListing(listingId);
-            
-            if (!listing) {
-                showNotification('Tin rao không tồn tại!', 'error');
-                return;
-            }
-            
-            if (listing.sold) {
-                showNotification('Tin rao đã được bán!', 'error');
-                return;
-            }
-            
-            if (listing.cancelled) {
-                showNotification('Tin rao đã bị hủy!', 'error');
-                return;
-            }
-            
-            if (listing.seller === gameState.username) {
-                showNotification('Bạn không thể mua vật phẩm của chính mình!', 'error');
-                return;
-            }
-            
-            const item = items.find(i => i.id === listing.itemId);
-            const totalPrice = listing.price * listing.quantity;
-            
-            modalTitle.textContent = `Mua ${item.name}`;
-            modalContent.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
-                    <div class="item-icon ${item.id}" style="width: 60px; height: 60px; font-size: 28px; background: ${item.color}">
-                        ${item.icon}
-                    </div>
-                    <div>
-                        <h4 style="margin-bottom: 5px;">${item.name} x${listing.quantity}</h4>
-                        <div style="font-size: 14px; color: #AAA;">Người bán: ${listing.seller}</div>
-                    </div>
-                </div>
-                
-                <div style="margin-bottom: 20px;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span>Giá mỗi cái:</span>
-                        <span style="font-weight: bold; color: var(--accent-color);">${listing.price} xu</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span>Số lượng:</span>
-                        <span>${listing.quantity}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span>Tổng tiền:</span>
-                        <span style="font-weight: bold; color: var(--accent-color); font-size: 18px;">${totalPrice} xu</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between;">
-                        <span>Số dư của bạn:</span>
-                        <span style="color: ${gameState.balance >= totalPrice ? 'var(--success-color)' : 'var(--danger-color)'}">
-                            ${gameState.balance} xu
-                        </span>
-                    </div>
-                </div>
-                
-                ${listing.description ? `
-                    <div style="margin-bottom: 20px;">
-                        <div style="font-weight: bold; margin-bottom: 5px;">Mô tả:</div>
-                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-size: 14px;">
-                            ${listing.description}
-                        </div>
-                    </div>
-                ` : ''}
-                
-                <div style="display: flex; gap: 10px;">
-                    <button class="btn btn-secondary" id="cancelPurchaseBtn" style="flex: 1;">
-                        <i class="fas fa-times"></i> Hủy
-                    </button>
-                    <button class="btn btn-success" id="confirmPurchaseBtn" style="flex: 2;" 
-                            ${gameState.balance < totalPrice ? 'disabled' : ''}>
-                        <i class="fas fa-shopping-cart"></i> Xác nhận mua
-                    </button>
-                </div>
-                
-                ${gameState.balance < totalPrice ? `
-                    <div style="margin-top: 10px; color: var(--danger-color); font-size: 12px; text-align: center;">
-                        <i class="fas fa-exclamation-triangle"></i> Bạn không đủ xu để mua vật phẩm này!
-                    </div>
-                ` : ''}
-            `;
-            
-            // Add event listeners to modal buttons
-            document.getElementById('cancelPurchaseBtn').addEventListener('click', () => {
-                listingModal.classList.remove('active');
-            });
-            
-            document.getElementById('confirmPurchaseBtn').addEventListener('click', () => {
-                purchaseListing(listingId);
-            });
-            
-            listingModal.classList.add('active');
-        }
-
-        function purchaseListing(listingId) {
-            const listing = GameDatabase.findListing(listingId);
-            const totalPrice = listing.price * listing.quantity;
-            
-            // Check if user has enough balance
-            if (gameState.balance < totalPrice) {
-                showNotification('Bạn không đủ xu để mua vật phẩm này!', 'error');
-                return;
-            }
-            
-            // Get seller info
-            const seller = GameDatabase.findUser(listing.seller);
-            if (!seller) {
-                showNotification('Người bán không tồn tại!', 'error');
-                return;
-            }
-            
-            // Update buyer balance
-            gameState.balance -= totalPrice;
-            
-            // Update seller balance
-            const sellerNewBalance = seller.balance + totalPrice;
-            GameDatabase.updateUser(listing.seller, {
-                balance: sellerNewBalance
-            });
-            
-            // Add item to buyer's inventory
-            gameState.inventory[listing.itemId] += listing.quantity;
-            
-            // Update buyer data in database
-            GameDatabase.updateUser(gameState.username, {
-                balance: gameState.balance,
-                inventory: { ...gameState.inventory }
-            });
-            
-            // Mark listing as sold
-            GameDatabase.updateListing(listingId, {
-                sold: true,
-                buyer: gameState.username,
-                soldAt: new Date().toISOString()
-            });
-            
-            // Record transaction
-            const transaction = {
-                id: 'tx_' + Date.now() + Math.random().toString(36).substr(2, 9),
-                type: 'player_to_player',
-                itemId: listing.itemId,
-                itemName: items.find(i => i.id === listing.itemId).name,
-                quantity: listing.quantity,
-                pricePerItem: listing.price,
-                totalAmount: totalPrice,
-                seller: listing.seller,
-                buyer: gameState.username,
-                listingId: listingId,
-                timestamp: new Date().toISOString()
-            };
-            
-            GameDatabase.addTransaction(transaction);
-            
-            // Update leaderboard
-            updateLeaderboard();
+            inventory[listing.itemId] += listing.quantity;
             
             // Update UI
-            updateInventoryDisplay();
-            loadMarketListings();
+            populateItemFilters();
             loadMyListings();
             
-            // Close modal
-            listingModal.classList.remove('active');
-            
-            // Show success notification
-            const itemName = items.find(i => i.id === listing.itemId).name;
-            showNotification(`Mua thành công ${listing.quantity} ${itemName} với giá ${totalPrice} xu!`, 'success');
-            
-            // Add chat notification
-            addChatMessage('Hệ thống', `${gameState.username} đã mua ${listing.quantity} ${itemName} từ ${listing.seller} với giá ${totalPrice} xu!`, true);
+            // Show success message
+            const item = items.find(i => i.id === listing.itemId);
+            showNotification(`Đã hủy tin bán ${listing.quantity} ${item.name}!`, 'success');
         }
 
-        // Transactions functions
-        function loadTransactions() {
-            const userTransactions = GameDatabase.getUserTransactions(gameState.username);
+        // Buy listing
+        function buyListing(listingId) {
+            const listingIndex = marketListings.findIndex(l => l.id === listingId);
             
-            transactionsList.innerHTML = '';
-            
-            if (userTransactions.length === 0) {
-                transactionsList.innerHTML = `
-                    <div class="no-listings">
-                        <i class="fas fa-history fa-3x" style="margin-bottom: 10px;"></i>
-                        <p>Chưa có giao dịch nào!</p>
-                        <p style="font-size: 12px;">Giao dịch của bạn sẽ hiển thị ở đây</p>
-                    </div>
-                `;
+            if (listingIndex === -1) {
+                showNotification('Không tìm thấy tin rao!', 'error');
                 return;
             }
             
-            userTransactions.forEach(transaction => {
-                const item = items.find(i => i.id === transaction.itemId);
-                const isBuyer = transaction.buyer === gameState.username;
-                const isSeller = transaction.seller === gameState.username;
-                const isSystem = transaction.buyer === 'Hệ thống';
-                
-                const transactionElement = document.createElement('div');
-                transactionElement.className = 'listing-item';
-                transactionElement.innerHTML = `
-                    <div class="listing-info">
-                        <div class="item-icon ${transaction.itemId}" style="background: ${item.color}">
-                            ${item.icon}
-                        </div>
-                        <div class="listing-details">
-                            <div style="font-weight: bold;">${item.name} x${transaction.quantity}</div>
-                            <div style="font-size: 12px; color: #AAA;">
-                                ${new Date(transaction.timestamp).toLocaleString('vi-VN')}
-                            </div>
-                            <div style="font-size: 12px; margin-top: 5px;">
-                                ${isSystem ? 'Bán cho hệ thống' : 
-                                  isBuyer ? `Mua từ ${transaction.seller}` : 
-                                  `Bán cho ${transaction.buyer}`}
-                            </div>
-                        </div>
-                    </div>
-                    <div style="text-align: right;">
-                        <div style="font-weight: bold; color: ${isSeller || isSystem ? 'var(--success-color)' : 'var(--danger-color)'}; font-size: 18px;">
-                            ${isSeller || isSystem ? '+' : '-'}${transaction.totalAmount} xu
-                        </div>
-                        <div style="font-size: 12px; color: #AAA;">
-                            ${transaction.pricePerItem} xu/cái
-                        </div>
-                    </div>
-                `;
-                
-                transactionsList.appendChild(transactionElement);
-            });
-        }
-
-        // Leaderboard functions
-        function loadLeaderboard() {
-            // In a real app, this would load from server
-            // For demo, we'll generate mock data if empty
-            if (GameDatabase.leaderboard.length === 0) {
-                GameDatabase.leaderboard = [
-                    { username: 'Người chơi 1', balance: 12500, totalEarned: 25000 },
-                    { username: 'Người chơi 2', balance: 9800, totalEarned: 19800 },
-                    { username: 'Người chơi 3', balance: 7600, totalEarned: 17600 },
-                    { username: 'Người chơi 4', balance: 5400, totalEarned: 12400 },
-                    { username: 'Người chơi 5', balance: 3200, totalEarned: 9200 }
-                ];
-                GameDatabase.saveLeaderboard();
+            const listing = marketListings[listingIndex];
+            const totalPrice = listing.price * listing.quantity;
+            const currentBalance = parseInt(balanceAmount.textContent);
+            
+            // Check balance
+            if (currentBalance < totalPrice) {
+                showNotification(`Bạn cần ${totalPrice} xu, hiện có ${currentBalance} xu!`, 'error');
+                return;
             }
             
-            updateLeaderboardDisplay();
+            // Update balance
+            const newBalance = currentBalance - totalPrice;
+            balanceAmount.textContent = newBalance;
+            
+            // Mark as sold
+            marketListings[listingIndex].sold = true;
+            
+            // Add to buyer's inventory (in real app, update database)
+            // For demo, just show message
+            
+            // Update UI
+            loadMarketListings();
+            
+            // Show success message
+            const item = items.find(i => i.id === listing.itemId);
+            showNotification(`Mua thành công ${listing.quantity} ${item.name} với giá ${totalPrice} xu!`, 'success');
         }
 
-        function updateLeaderboard() {
-            // Find current user in leaderboard or add them
-            const userIndex = GameDatabase.leaderboard.findIndex(u => u.username === gameState.username);
-            
-            if (userIndex !== -1) {
-                // Update existing user
-                GameDatabase.leaderboard[userIndex].balance = gameState.balance;
-                // Calculate total earned (simplified)
-                GameDatabase.leaderboard[userIndex].totalEarned = Math.max(
-                    GameDatabase.leaderboard[userIndex].totalEarned,
-                    gameState.balance * 2
-                );
-            } else if (gameState.loggedIn) {
-                // Add new user
-                GameDatabase.leaderboard.push({
-                    username: gameState.username,
-                    balance: gameState.balance,
-                    totalEarned: gameState.balance * 2
+        // Setup event listeners
+        function setupEventListeners() {
+            // Tab switching
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    switchTab(tabId);
                 });
-            }
-            
-            // Sort by balance (descending)
-            GameDatabase.leaderboard.sort((a, b) => b.balance - a.balance);
-            
-            // Keep only top 10
-            GameDatabase.leaderboard = GameDatabase.leaderboard.slice(0, 10);
-            
-            // Save to database
-            GameDatabase.saveLeaderboard();
-            
-            // Update display
-            updateLeaderboardDisplay();
-        }
-
-        function updateLeaderboardDisplay() {
-            leaderboard.innerHTML = '';
-            
-            GameDatabase.leaderboard.forEach((user, index) => {
-                const rank = index + 1;
-                const leaderboardItem = document.createElement('div');
-                leaderboardItem.className = `leaderboard-item ${rank <= 3 ? `top-${rank}` : ''}`;
-                
-                leaderboardItem.innerHTML = `
-                    <div class="rank">${rank}</div>
-                    <div class="user-avatar">${user.username.charAt(0).toUpperCase()}</div>
-                    <div class="user-details">
-                        <div class="user-name">${user.username}</div>
-                        <div class="user-stats">
-                            <i class="fas fa-coins"></i> ${user.balance.toLocaleString()} xu |
-                            <i class="fas fa-trophy"></i> ${user.totalEarned.toLocaleString()} xu tổng
-                        </div>
-                    </div>
-                `;
-                
-                leaderboard.appendChild(leaderboardItem);
             });
             
-            // Add prize notification for top 3
-            if (GameDatabase.leaderboard.length >= 3) {
-                const prizeInfo = document.createElement('div');
-                prizeInfo.style.background = 'rgba(255, 215, 0, 0.1)';
-                prizeInfo.style.padding = '10px';
-                prizeInfo.style.borderRadius = '10px';
-                prizeInfo.style.marginTop = '15px';
-                prizeInfo.style.fontSize = '12px';
-                prizeInfo.innerHTML = `
-                    <div style="color: #FFD700; font-weight: bold;">
-                        <i class="fas fa-award"></i> PHẦN THƯỞNG TOP 3 HÔM NAY
-                    </div>
-                    <div style="margin-top: 5px;">
-                        Top 1: ${GameDatabase.leaderboard[0].username} - 50,000 VND<br>
-                        Top 2: ${GameDatabase.leaderboard[1].username} - 50,000 VND<br>
-                        Top 3: ${GameDatabase.leaderboard[2].username} - 50,000 VND
-                    </div>
-                    <div style="margin-top: 5px; color: #AAA; font-size: 10px;">
-                        Liên hệ <a href="https://t.me/cskhh1" style="color: #0088cc;">@cskhh1</a> trên Telegram để nhận thưởng
-                    </div>
-                `;
-                leaderboard.appendChild(prizeInfo);
-            }
-        }
-
-        // Chat functions
-        function loadChatMessages() {
-            // In a real app, this would load from server
-            // For demo, we'll generate initial messages if empty
-            if (GameDatabase.chatMessages.length === 0) {
-                GameDatabase.chatMessages = [
-                    { sender: 'Hệ thống', message: 'Chào mừng đến với game Đào Đá PRO!', time: '10:00', isSystem: true },
-                    { sender: 'Hệ thống', message: 'Chợ giao dịch đã mở! Hãy mua bán vật phẩm với người chơi khác.', time: '10:05', isSystem: true },
-                    { sender: 'Người chơi 1', message: 'Ai có kim cương không? Mua giá cao!', time: '10:30', isSystem: false },
-                    { sender: 'Người chơi 2', message: 'Mình vừa bán được 10 cục vàng, kiếm được 500 xu!', time: '11:15', isSystem: false },
-                    { sender: 'Người chơi 3', message: 'Chợ giao dịch rất tiện lợi, mình vừa mua được vài con chuột giá rẻ!', time: '12:45', isSystem: false }
-                ];
-                GameDatabase.saveChat();
-            }
-            
-            updateChatDisplay();
-        }
-
-        function updateChatDisplay() {
-            chatMessages.innerHTML = '';
-            
-            GameDatabase.chatMessages.forEach(msg => {
-                const messageElement = document.createElement('div');
-                messageElement.className = 'chat-message';
-                messageElement.innerHTML = `
-                    <div class="sender">${msg.sender}</div>
-                    <div class="message">${msg.message}</div>
-                    <div class="time">${msg.time}</div>
-                `;
-                
-                if (msg.isSystem) {
-                    messageElement.style.background = 'rgba(0, 78, 137, 0.3)';
-                }
-                
-                chatMessages.appendChild(messageElement);
+            // Market tab switching
+            marketTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-market-tab');
+                    switchMarketTab(tabId);
+                    
+                    // Refresh data when switching tabs
+                    if (tabId === 'browse') {
+                        loadMarketListings();
+                    } else if (tabId === 'myListings') {
+                        loadMyListings();
+                    }
+                });
             });
             
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function addChatMessage(sender, message, isSystem = false) {
-            const now = new Date();
-            const time = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+            // Apply filters
+            applyFiltersBtn.addEventListener('click', loadMarketListings);
             
-            const newMessage = {
-                sender,
-                message,
-                time,
-                isSystem
-            };
+            // Create listing
+            createListingBtn.addEventListener('click', handleCreateListing);
             
-            GameDatabase.chatMessages.push(newMessage);
+            // Logout button
+            logoutBtn.addEventListener('click', () => {
+                showNotification('Đã đăng xuất thành công!', 'success');
+                // In real app, redirect to login page
+            });
             
-            // Keep only last 50 messages
-            if (GameDatabase.chatMessages.length > 50) {
-                GameDatabase.chatMessages = GameDatabase.chatMessages.slice(-50);
-            }
-            
-            GameDatabase.saveChat();
-            
-            updateChatDisplay();
-        }
-
-        function sendChatMessage() {
-            if (!gameState.loggedIn) {
-                showNotification('Bạn cần đăng nhập để gửi tin nhắn!', 'error');
-                return;
-            }
-            
-            const message = chatInput.value.trim();
-            if (!message) {
-                showNotification('Vui lòng nhập tin nhắn!', 'error');
-                return;
-            }
-            
-            if (message.length > 200) {
-                showNotification('Tin nhắn quá dài (tối đa 200 ký tự)!', 'error');
-                return;
-            }
-            
-            addChatMessage(gameState.username, message);
-            chatInput.value = '';
-            
-            // Auto-reply for certain keywords (simulated bot)
-            setTimeout(() => {
-                const msgLower = message.toLowerCase();
-                if (msgLower.includes('kim cương') || msgLower.includes('diamond')) {
-                    addChatMessage('Bot hỗ trợ', 'Kim cương có tỉ lệ rơi 5% ở độ sâu 0-100m và tăng dần khi đào sâu hơn!', true);
-                } else if (msgLower.includes('vàng') || msgLower.includes('gold')) {
-                    addChatMessage('Bot hỗ trợ', 'Vàng có giá 50 xu và tỉ lệ rơi 10% ở độ sâu 0-100m!', true);
-                } else if (msgLower.includes('chợ') || msgLower.includes('market')) {
-                    addChatMessage('Bot hỗ trợ', 'Vào tab "Chợ giao dịch" để mua bán vật phẩm với người chơi khác!', true);
-                } else if (msgLower.includes('admin') || msgLower.includes('hỗ trợ')) {
-                    addChatMessage('Bot hỗ trợ', 'Liên hệ admin qua Telegram @cskhh1 để được hỗ trợ!', true);
+            // Auto-suggest price based on item selection
+            listingItem.addEventListener('change', function() {
+                const selectedItem = items.find(i => i.id === this.value);
+                if (selectedItem && selectedItem.price > 0) {
+                    // Suggest price 20% higher than system price
+                    const suggestedPrice = Math.ceil(selectedItem.price * 1.2);
+                    listingPrice.value = suggestedPrice;
+                    
+                    // Update max quantity based on inventory
+                    const maxQuantity = inventory[selectedItem.id];
+                    listingQuantity.max = maxQuantity;
+                    if (parseInt(listingQuantity.value) > maxQuantity) {
+                        listingQuantity.value = maxQuantity;
+                    }
                 }
-            }, 1000);
-        }
-
-        function updateOnlineCount() {
-            // Simulate random online count between 50-150
-            const onlineCount = Math.floor(Math.random() * 100) + 50;
-            document.getElementById('onlineCount').textContent = `Đang online: ${onlineCount}`;
+            });
             
-            // Update every 30 seconds
-            setTimeout(updateOnlineCount, 30000);
+            // Update quantity validation
+            listingQuantity.addEventListener('input', function() {
+                const selectedItem = listingItem.value;
+                if (selectedItem) {
+                    const maxQuantity = inventory[selectedItem];
+                    if (parseInt(this.value) > maxQuantity) {
+                        this.value = maxQuantity;
+                        showNotification(`Bạn chỉ có ${maxQuantity} vật phẩm này!`, 'warning');
+                    }
+                }
+            });
         }
 
-        // Tab switching functions
+        // Switch main tabs
         function switchTab(tabId) {
             // Update tabs
             tabs.forEach(tab => {
+                tab.classList.remove('active');
                 if (tab.getAttribute('data-tab') === tabId) {
                     tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
                 }
             });
             
             // Update tab contents
             tabContents.forEach(content => {
+                content.classList.remove('active');
                 if (content.id === `${tabId}Tab`) {
                     content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
                 }
             });
         }
 
+        // Switch market tabs
         function switchMarketTab(tabId) {
             // Update market tabs
             marketTabs.forEach(tab => {
+                tab.classList.remove('active');
                 if (tab.getAttribute('data-market-tab') === tabId) {
                     tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
                 }
             });
             
             // Update market contents
             marketContents.forEach(content => {
-                if (content.id === `${tabId}Listings` || content.id === tabId) {
+                content.classList.remove('active');
+                if (content.id === tabId || content.id === `${tabId}Listings`) {
                     content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
                 }
             });
         }
 
-        // Utility functions
+        // Show notification
         function showNotification(message, type = 'success') {
             notificationMessage.textContent = message;
             notification.className = 'notification';
@@ -2618,8 +1159,23 @@
             }, 3000);
         }
 
-        // Initialize the game when page loads
-        document.addEventListener('DOMContentLoaded', initGame);
+        // Get time ago string
+        function getTimeAgo(date) {
+            const now = new Date();
+            const diff = now - date;
+            
+            const minutes = Math.floor(diff / 60000);
+            const hours = Math.floor(diff / 3600000);
+            const days = Math.floor(diff / 86400000);
+            
+            if (minutes < 1) return 'Vừa xong';
+            if (minutes < 60) return `${minutes} phút trước`;
+            if (hours < 24) return `${hours} giờ trước`;
+            return `${days} ngày trước`;
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
